@@ -12,18 +12,28 @@ if ($_POST) {
   $url = (isset($_POST['url'])) ? $_POST['url'] : "";
 
 
+  $fecha_imagen=new DateTime();
+  $nombre_archivo_imagen=($imagen!="")? $fecha_imagen->getTimestamp()."_".$imagen:"";
+  $tmp_imagen=$_FILES["imagen"]["tmp_name"];
+
+  if ($tmp_imagen!="") {
+   move_uploaded_file($tmp_imagen,"../../../assets/img/portfolio/".$nombre_archivo_imagen);
+  }
+
   $sentencia=$conexion->prepare("INSERT INTO `portafolio` (`por_id`, `por_titulo`, `por_subtitulo`, `por_imagen`, `por_descripcion`, `por_cliente`, `por_categoria`, `por_url`)
   VALUES (NULL, :titulo, :subtitulo, :imagen, :descripcion, :cliente, :categoria, :url);");
 
 
   $sentencia->bindParam(":titulo", $titulo);
   $sentencia->bindParam(":subtitulo", $subtitulo);
-  $sentencia->bindParam(":imagen", $imagen);
+  $sentencia->bindParam(":imagen", $nombre_archivo_imagen);
   $sentencia->bindParam(":descripcion", $descripcion);
   $sentencia->bindParam(":cliente", $cliente);
   $sentencia->bindParam(":categoria", $categoria);
   $sentencia->bindParam(":url", $url);
   $sentencia->execute();
+  $mensaje="Registro agregado con éxito...........";
+    header("location:index.php?mensaje=",$mensaje);
 
 }
 include("../../templates/header.php");
