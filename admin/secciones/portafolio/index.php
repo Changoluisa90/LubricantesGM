@@ -69,9 +69,7 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <td scope="col"><?php echo $registros['por_id']; ?></td>
                 <td scope="col"><?php echo $registros ['por_titulo'] ?></td>
                 <td scope="col"><?php echo $registros ['por_subtitulo'] ?> </td>
-                <td scope="col">
-                <img width="50" src="../../../assets/img/portfolio/<?php echo $registros['por_imagen']; ?>" />
-                </td>
+                <td scope="col"><img width="50" src="../../../assets/img/portfolio/<?php echo $registros['por_imagen']; ?>" /></td>
                 <td scope="col"><?php echo $registros['por_descripcion']; ?></td>
                 <td scope="col"><?php echo $registros['por_cliente']; ?></td>
                 <td scope="col"><?php echo $registros['por_categoria']; ?></td>

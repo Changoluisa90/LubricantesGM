@@ -55,8 +55,8 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Bienbenido a nuestra pagina!</div>
-            <div class="masthead-heading text-uppercase">ES UN PLACER CONOCERTE</div>
+            <div class="masthead-subheading">Bienvenidos  a nuestra pagina!</div>
+            <div class="masthead-heading text-uppercase">ES UN PLACER CONOCERTE </div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más Información</a>
         </div>
     </header>
@@ -73,6 +73,7 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                           
                             <i class="fas <?php echo $registros['ser_icono'] ?> fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3"><?php echo $registros['ser_titulo']; ?></h4>
@@ -237,8 +238,8 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="row">
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                        <h4>Parveen Anand</h4>
+                        <img class="mx-auto rounded-circle" src="assets/img/team/4.jpg" alt="..." />
+                        <h4>Edwin Changoluisa</h4>
                         <p class="text-muted">Lead Designer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
@@ -247,8 +248,8 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                        <h4>Diana Petersen</h4>
+                        <img class="mx-auto rounded-circle" src="assets/img/team/5.jpg" alt="..." />
+                        <h4>Edwin Changoluisa</h4>
                         <p class="text-muted">Lead Marketer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
@@ -257,8 +258,8 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                        <h4>Larry Parker</h4>
+                        <img class="mx-auto rounded-circle" src="assets/img/team/4.jpg" alt="..." />
+                        <h4>Edwin Changoluisa</h4>
                         <p class="text-muted">Lead Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>

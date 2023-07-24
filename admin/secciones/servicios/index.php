@@ -2,6 +2,24 @@
 include("../../bd.php");
 if (isset($_GET['txtID'])) {
 
+     
+    $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
+    // buscar imagen del portafolio
+    $sentencia=$conexion->prepare("SELECT ser_icono FROM servicios WHERE ser_id=:ser_id");
+    $sentencia->bindParam(":ser_id",$txtID);
+    $sentencia->execute();
+    $registro_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
+
+
+    if (isset($registro_imagen["ser_icono"])) {
+        if (file_exists("../../../assets/img/servicios/".$registro_imagen["ser_icono"])) {
+            unlink("../../../assets\img\servicios/".$registro_imagen["ser_icono"]);
+
+
+            
+        }
+    }
+
     //BORRAR EL DICHO REGISTRO CON EL ID CORRESPONDIENTE 
     $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
     $sentencia=$conexion->prepare("DELETE FROM servicios WHERE ser_id=:ser_id");
@@ -41,10 +59,10 @@ include("../../templates/header.php");
                 <tbody>
                     <?php foreach ($lista_servicios as $registros) { ?>
                         <tr class="">
-                            <td><?php echo $registros['ser_id']; ?></td>
-                            <td><?php echo $registros ['ser_icono'] ?></td>
-                            <td><?php echo $registros ['ser_titulo'] ?></td>
-                            <td><?php echo $registros ['ser_descripcion'] ?></td>
+                            <td scope="col" ><?php echo $registros['ser_id']; ?></td>
+                            <td scope="col"><img width="50" src="../../../assets/img/servicios/<?php echo $registros['ser_icono']; ?>" /></td>
+                            <td scope="col"><?php echo $registros ['ser_titulo'] ?></td>
+                            <td scope="col"><?php echo $registros ['ser_descripcion'] ?></td>
 
                             <td>
                                 <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registros['ser_id']?>" role="button"" role="button">Editar</a>
