@@ -33,12 +33,7 @@ Listar Configuracíon
                             <td>R1C3</td>
                             <td>Editar/eliminar</td>
                         </tr>
-                        <tr class="">
-                            <td scope="row">Item</td>
-                            <td>Item</td>
-                            <td>Item</td>
-
-                        </tr>
+                        
                     <?php } ?>
                 </tbody>
             </table>
