@@ -28,12 +28,19 @@ Listar Configuracíon
                 <tbody>
                     <?php foreach ($lista_configuraciones as $registros) { ?>
                         <tr class="">
-                            <td scope="row">R1C1</td>
-                            <td>R1C2</td>
-                            <td>R1C3</td>
-                            <td>Editar/eliminar</td>
+                            <td scope="col"><?php echo $registros['con_id']; ?></td>
+                            <td scope="col"><?php echo $registros['nombreconfiguracion']; ?></td>
+                            <td scope="col"><?php echo $registros['valor']; ?></td>
+                            <td>
+                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registros['con_id'] ?>" role="button"" role=" button">Editar</a>
+                                |
+                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registros['con_id'] ?>" role="button">Eliminar</a>
+
+
+                            </td>
+
                         </tr>
-                        
+
                     <?php } ?>
                 </tbody>
             </table>
