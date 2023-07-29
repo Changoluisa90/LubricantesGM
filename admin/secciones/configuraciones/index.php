@@ -1,5 +1,13 @@
 <?php
 include("../../bd.php");
+if (isset($_GET['txtID'])) {
+
+    //2BORRAR  DICHO REGISTRO CON EL ID CORRESPONDIENTE desde el formulario
+    $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
+    $sentencia=$conexion->prepare("DELETE FROM configuraciones WHERE con_id=:con_id");
+    $sentencia->bindParam(":con_id",$txtID);
+    $sentencia->execute();
+}
 
 //seleccionar registros
 $sentencia = $conexion->prepare("SELECT * FROM `configuraciones` ");

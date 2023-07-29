@@ -9,6 +9,11 @@ $sentencia = $conexion->prepare("SELECT * FROM `portafolio` ");
 $sentencia->execute();
 $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+// Seleccionar registros de portafolo o Configuraciones
+$sentencia = $conexion->prepare("SELECT * FROM `configuraciones` ");
+$sentencia->execute();
+$lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -55,9 +60,9 @@ $lista_portafolio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Bienvenidos  a nuestra pagina!</div>
-            <div class="masthead-heading text-uppercase">ES UN PLACER CONOCERTE </div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más Información</a>
+            <div class="masthead-subheading"><?php echo$lista_configuraciones[0]['valor']; ?></div>
+            <div class="masthead-heading text-uppercase"><?php echo$lista_configuraciones[1]['valor']; ?></div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services"><?php echo$lista_configuraciones[2]['valor']; ?></a>
         </div>
     </header>
     <!-- Services-->
