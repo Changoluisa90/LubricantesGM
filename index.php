@@ -19,35 +19,33 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Agency - Start Bootstrap Theme</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
-
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -60,9 +58,9 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading"><?php echo$lista_configuraciones[0]['valor']; ?></div>
-            <div class="masthead-heading text-uppercase"><?php echo$lista_configuraciones[1]['valor']; ?></div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services"><?php echo$lista_configuraciones[2]['valor']; ?></a>
+            <div class="masthead-subheading"><?php echo $lista_configuraciones[0]['valor']; ?></div>
+            <div class="masthead-heading text-uppercase"><?php echo $lista_configuraciones[1]['valor']; ?></div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services"><?php echo $lista_configuraciones[2]['valor']; ?></a>
         </div>
     </header>
     <!-- Services-->
@@ -73,21 +71,18 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <h3 class="section-subheading text-muted">cambio de aceite de todo tipo de vehiculos </h3>
             </div>
 
-            <div class="row text-center">
+            <div class="row text-center" >
                 <?php foreach ($lista_servicios as $registros) { ?>
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                           
-                            <i class="fas <?php echo $registros['ser_icono'] ?> fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3"><?php echo $registros['ser_titulo']; ?></h4>
-                        <p class="text-muted"><?php echo $registros['ser_descripcion'] ?></p>
+                        <img src="assets/img/servicios/<?php echo $registros['ser_icono'] ?> " class="img/fluid" alt="...">
+                        <div class="card-body">
+                            <h4 class="my-3"><?php echo $registros['ser_titulo']; ?></h4>
+                            <p class="text-muted"><?php echo $registros['ser_descripcion'] ?></p>
+                        </div>
                     </div>
-
                 <?php } ?>
-
             </div>
+
         </div>
     </section>
     <!-- Portfolio Grid Mostrar imagen-->
@@ -146,7 +141,7 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                                 </ul>
                                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                                     <i class="fas fa-xmark me-1"></i>
-                                                    Cerrar 
+                                                    Cerrar
                                                 </button>
                                             </div>
                                         </div>
